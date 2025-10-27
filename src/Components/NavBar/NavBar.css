@@ -1,0 +1,81 @@
+
+.NavBar{
+    position:fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px solid rgba(94, 90, 90, 0.477);
+    display: flex;
+    padding: 40px 60px;
+    color: white;
+    font-family: "Space Mono", monospace;
+    background-color: rgb(0, 0, 0);
+}
+
+.NavBarSection1{
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.NavBarSection1SubHead{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+    /* letter-spacing: -2px; */
+    cursor: pointer;
+}
+
+.NavBarSection1SubHeadShop, .NavBarSection1SubHeadMore{
+    position: absolute;
+    top: 80px;
+    background-color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    border: 2px solid rgba(94, 90, 90, 0.477);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.NavBarSection1SubHeadShopPara, .NavBarSection1SubHeadMorePara{
+    cursor: pointer;
+    width: 150px;
+    padding: 5px 0px;
+}
+
+.NavBarSection1SubHeadShopPara:hover, .NavBarSection1SubHeadMorePara:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+
+.NavBarSection1SubHead:hover{
+    text-decoration:underline;
+    text-decoration-thickness: 2px;
+}
+
+.NavBarSection2{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NavBarSection2Head{
+    display: flex;
+    gap: 40px;
+    font-weight: 400;
+    letter-spacing: -5px;
+}
+
+.NavBarSection3{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.NavBarSection3 > .NavBarSection3Icon{
+    display: flex;
+    gap: 30px;
+}
