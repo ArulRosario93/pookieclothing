@@ -1,0 +1,64 @@
+
+
+.ProductPage{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    margin-top: 250px;
+}
+
+.ProductPagePageNavigationPara{
+    color: white;
+    font-family: "Space Mono", monospace;
+}
+
+.ProductPageProduct{
+    padding: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ProductPageProductImage{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+}
+
+.ProductPageProductImageContainer{
+    height: 120vh;
+    width: 100%;
+}
+
+.ProductPageProductImageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProductPageProductContent{
+    padding: 0px 50px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ProductPageProductContentNameNPrice{
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductPageProductContentNameNPricePara{
+    color: white;
+    font-size: 22px;
+    font-family: "Space Mono", monospace;
+}
+
+.ProductPageProductContentNameNPriceParaSmall{
+    color: white;
+    font-size: 20px;
+    font-family: "Space Mono", monospace;
+}

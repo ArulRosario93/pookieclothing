@@ -39,21 +39,21 @@ const NavBar = () => {
 
             {/* Section 1 */}
             <div className="NavBarSection1">
-                <p className="NavBarSection1SubHead" onClick={handleClickShop}>Shop <ExpandMoreIcon />
+                <h4 className="NavBarSection1SubHead" onClick={handleClickShop}>Shop <ExpandMoreIcon />
                     <div className="NavBarSection1SubHeadShop" style={{ display: isClickedShop ? "flex" : "none" }}>
                         <p className="NavBarSection1SubHeadShopPara">Clothing</p>
                         <p className="NavBarSection1SubHeadShopPara">Accessories</p>
                         <p className="NavBarSection1SubHeadShopPara">Gift Cards</p>
                     </div>
-                </p>
+                </h4>
 
-                <p className="NavBarSection1SubHead" onClick={handleClickMore}>More <ExpandMoreIcon />
+                <h4 className="NavBarSection1SubHead" onClick={handleClickMore}>More <ExpandMoreIcon />
                     <div className="NavBarSection1SubHeadMore" style={{ display: isClickedMore ? "flex" : "none" }}>
                         <p className="NavBarSection1SubHeadMorePara">About Us</p>
                         <p className="NavBarSection1SubHeadMorePara">Contact</p>
                         <p className="NavBarSection1SubHeadMorePara">FAQ</p>
                     </div>
-                </p>
+                </h4>
             </div>
 
             <div className="NavBarSection2">

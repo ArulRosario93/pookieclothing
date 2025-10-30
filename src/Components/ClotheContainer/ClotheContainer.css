@@ -1,0 +1,59 @@
+
+.ClotheContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    height: 60vh;
+    width: 28vw;
+}
+
+.ClotheContainer:hover{
+    cursor: pointer;
+}
+
+.ClotheContainerImage{
+    width: 100%;
+    height: 85%;
+}
+
+.ClotheContainerImage img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: optimizeQuality;
+}
+
+.ClotheContainerContent{
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+/* when ClotheContainerImage hovered text should be underlined */
+.ClotheContainer:hover .ClotheContainerContentName{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+
+.ClotheContainerContentName{
+    font-size:16px;
+    color: white;
+    font-weight: 400;
+    font-family: "Space Mono", monospace;
+
+}
+
+.ClotheContainerContentPrice{
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+    font-family: "Space Mono", monospace;
+
+}
