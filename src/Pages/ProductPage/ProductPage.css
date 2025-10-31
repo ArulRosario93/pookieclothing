@@ -19,23 +19,47 @@
     display: flex;
     flex-direction: row;
 }
+.ProductPageProductArrows{
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ProductPageProductArrowsContainer{
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.ProductPageProductArrowsContainer:hover{
+    background-color: rgb(28, 28, 28);
+}
 
 .ProductPageProductImage{
     flex: 4;
     display: flex;
     flex-direction: column;
-    background-color: azure;
 }
 
 .ProductPageProductImageContainer{
     height: 120vh;
+    position: relative;
     width: 100%;
 }
 
 .ProductPageProductImageContainer img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .ProductPageProductContent{
@@ -61,4 +85,43 @@
     color: white;
     font-size: 20px;
     font-family: "Space Mono", monospace;
+}
+
+.ProductPageProductImagePreview{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ProductPageProductImagePreviewContainer{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.ProductPageProductImagePreviewContainer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.ProductPageProductImagePreviewContainerSelected{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 5px solid white;
+}
+
+.ProductPageProductImagePreviewContainerSelected img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
 }
