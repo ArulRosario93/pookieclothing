@@ -73,7 +73,7 @@ const HomePage = () => {
 
     return(
         <div className="HomePage">
-            <NavBar />
+            {/* <NavBar /> */}
             <GreetingText />
             <Featured items={items} />
         </div>
