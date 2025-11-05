@@ -7,8 +7,13 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useState } from 'react';
 import SuggestedProduct from './SuggestedProduct/SuggestedProduct';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ProductPage = () => {
+
+    const nav = useLocation();
+
+    console.log(nav.state);
 
     const [selectedImage, setSelectedImage] = useState(0);
 
@@ -116,7 +121,7 @@ const ProductPage = () => {
             {/* Page Navigation */}
             <div className='ProductPagePageNavigation'>
 
-                <p className='ProductPagePageNavigationPara'>Home \ Products \ Massive Blue</p>
+                <p className='ProductPagePageNavigationPara'>Home \ Products \ {items[0].clotheName}</p>
 
             </div>
 
@@ -168,19 +173,18 @@ const ProductPage = () => {
 
                     <div className='ProductPageProductContentNameNPrice'>
 
-                        <p className='ProductPageProductContentNameNPricePara'>Massive Black Blue</p>
-                        <p className='ProductPageProductContentNameNPriceParaSmall'>GBP33.00 - 38.00</p>
+                        <p className='ProductPageProductContentNameNPricePara'>{items[0].clotheName}</p>
+                        <p className='ProductPageProductContentNameNPriceParaSmall'>{items[0].priceSection}</p>
 
                     </div>
 
                     <InputSelect head='Size' />
                     <InputSelect head='Colour' />
                     <InputSelect head='Style' />
-                    
-                    <AddToBasket />
+
+                    <AddToBasket /> 
 
                     <AboutProduct />
-
 
                 </div>
 
@@ -189,7 +193,7 @@ const ProductPage = () => {
 
 
             {/* You might Also Like */}
-                        <SuggestedProduct items={items.slice(0, 3)} />
+            <SuggestedProduct items={items.slice(0, 3)} />
 
         </div>
     );

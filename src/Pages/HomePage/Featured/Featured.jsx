@@ -11,7 +11,9 @@ const Featured = ({ items }) => {
                 
                 {
                     items.map((item, index) => {
-                        return <ClotheContainer key={index} 
+                        return <ClotheContainer
+                        productID={index}
+                        key={index} 
                         imageSrc={item.imageSrc} 
                         clotheName={item.clotheName} priceSection={item.priceSection} />
                     })

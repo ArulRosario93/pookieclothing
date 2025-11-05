@@ -1,9 +1,22 @@
 import React from "react";
 import './ClotheContainer.css';
+import { Navigate, useNavigate } from "react-router-dom";
 
-const ClotheContainer = ({imageSrc, clotheName, priceSection}) => {
+const ClotheContainer = ({imageSrc, clotheName, priceSection, productID}) => {
+
+    const nav = useNavigate();
+
+    const handleClick = () => {
+        nav('/product', {
+            state: {
+                productID
+            }
+        });
+        window.scrollTo(0, 0)
+    }
+
     return (
-        <div className="ClotheContainer">
+        <div className="ClotheContainer" onClick={handleClick}>
             
             {/* image */}
             <div className="ClotheContainerImage">

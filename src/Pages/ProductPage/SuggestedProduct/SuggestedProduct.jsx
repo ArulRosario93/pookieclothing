@@ -11,7 +11,7 @@ const SuggestedProduct = ({ items }) => {
                     {
                         items.map((item, i) => {
                             return (
-                                <ClotheContainer key={i} imageSrc={item.imageSrc} clotheName={item.clotheName} priceSection={item.priceSection} />
+                                <ClotheContainer key={i} productID={i} imageSrc={item.imageSrc} clotheName={item.clotheName} priceSection={item.priceSection} />
                             )
                         })
                     }
