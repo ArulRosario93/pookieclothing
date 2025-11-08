@@ -12,13 +12,19 @@ const InputSelect = ({ head }) => {
     return (
         <div className="InputSelect">
 
-            <p className="InputSelectPara">{head}</p>
-            
-            <KeyboardArrowDownIcon style={{ color: 'white' }} />
+            {/* <label htmlFor={head} hidden className="InputSelectPara"></label> */}
+
+
+            <select className="InputSelectSelect" name={head} id={head}>
+                <option>{head}</option>
+            </select>
+            {/* <KeyboardArrowDownIcon style={{ color: 'white' }} /> */}
 
             {/* <input type="hidden" onClick={handleClick}>
             </input> */}
 
+
+        
         </div>
     )
 }

@@ -85,7 +85,7 @@ const ProductPage = () => {
             image: 'https://assets.bigcartel.com/product_images/403181877/2e0b78e0-a113-491a-b207-4f7206b1d178.jpeg',
         },
         {
-            image: 'https://assets.bigcartel.com/product_images/413044122/6fc8faac-c8d8-4770-8e2e-27b687b27af9.webp',
+            image: 'https://images.threadsmagazine.com/app/uploads/5139/13/11124242/131-turn-of-cloth-01.jpg',
         }
     ];
 
@@ -148,7 +148,7 @@ const ProductPage = () => {
 
                         </div>
 
-                        <img src={data[selectedImage].image} alt='clothe' />
+                                    <img src={data[selectedImage].image} alt='clothe' />
 
                     </div>
                     <div className='ProductPageProductImagePreview'>

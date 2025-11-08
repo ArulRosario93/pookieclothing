@@ -1,17 +1,31 @@
 
 .InputSelect{
     width: 100%;
-    padding: 15px;
+    /* padding: 15px; */
     border: 2px solid white;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
     justify-content: space-between;
+    /* Remove default arrow */
+    background-image: url(...);
+    /* Add custom arrow */
+    padding-right: 15px;    
+    /* margin-right: 10px; */
+}
+
+.InputSelectSelect{
+    font-family: "Space Mono", monospace;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    background-color: black;
+    color: white;
 }
 
 .InputSelectPara{
 
-    font-family: "Space Mono", monospace;
-    color: white;
+    /* color: white; */
     font-size: 14px;
 
 }
