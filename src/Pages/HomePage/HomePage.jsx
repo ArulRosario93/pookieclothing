@@ -8,9 +8,9 @@ const HomePage = () => {
 
     const [items, setItems] = React.useState([]);
 
+    
     useEffect(() => {
-        // http://localhost:8888/.netlify/functions/createorder
-        fetch('https://calm-malasada-3721b7.netlify.app/.netlify/functions/getproducts')
+        fetch('https://pookiewears-server.netlify.app/.netlify/functions/getproducts')
             .then(response => response.json())
             .then(data => {
                 setItems(data.message);
