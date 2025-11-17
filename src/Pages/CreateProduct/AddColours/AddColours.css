@@ -1,0 +1,28 @@
+
+.AddColours input{
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+
+.ColoursContainer{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.ColourContainer{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.ColourContainerInner{
+    width: 100%;
+    height: 100%;
+}

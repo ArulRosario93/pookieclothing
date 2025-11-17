@@ -14,8 +14,8 @@ const Featured = ({ items }) => {
                         return <ClotheContainer
                         productID={index}
                         key={index} 
-                        imageSrc={item.imageSrc} 
-                        clotheName={item.clotheName} priceSection={item.priceSection} />
+                        imageSrc={item.images} 
+                        clotheName={item.name} priceSection={item.price} />
                     })
                 }
 

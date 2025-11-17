@@ -1,0 +1,15 @@
+
+.AddImage{
+    
+    padding: 10px;
+    background-color: aquamarine;
+
+}
+
+.AddImageInp{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: black;
+}

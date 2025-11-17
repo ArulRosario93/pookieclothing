@@ -1,0 +1,6 @@
+.AddInput .input{
+    width: 100%;
+    font-family: "Space Mono", monospace;
+    padding: 15px;
+    outline: none;
+}

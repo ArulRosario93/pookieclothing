@@ -1,0 +1,18 @@
+
+.CreateProductHead{
+
+    font-size: 25px;
+    font-family: "Space Mono", monospace;
+
+}
+
+.CreateProductBtn{
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    background-color: black;
+    color: white;
+    font-family: "Space Mono", monospace;
+    padding: 10px 20px;
+}
+

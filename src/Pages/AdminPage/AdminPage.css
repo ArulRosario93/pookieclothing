@@ -1,0 +1,49 @@
+
+.AdminPage{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.AdminPageContent{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Mono",  monospace;
+}
+
+.AdminPageHead{
+    font-size: 50px;
+    font-family: "Space Mono", monospace;
+    margin-bottom: 40px;
+}
+
+.AdminPageContentPara{
+    font-size: 25px;
+    color: greenyellow;
+}
+
+.AdminPageContentBtns{
+    display: flex;
+    flex-direction: column;
+}
+
+.AdminPageContentBtns1, .AdminPageContentBtns2{
+    display: flex;
+    width: 250px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    margin: 5px;
+    transition: width .5s;
+    cursor: pointer;
+}
