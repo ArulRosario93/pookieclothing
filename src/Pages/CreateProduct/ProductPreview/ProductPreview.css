@@ -1,0 +1,92 @@
+
+.ProductPreview{
+    width: 100%;
+    height: 50vh;   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: start;
+}
+
+.ProductPreviewProductImage{
+    height: 100%;
+    width: 100%;
+    flex: 3;
+    position: relative;    
+}
+
+.ProductPreviewProductArrows{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.ProductPreviewProductImageContainer{
+    height: 100%;
+    width: 100%;
+}
+
+.ProductPreviewProductImageContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProductPreviewProductImagePreview{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ProductPreviewProductImagePreviewContainer, .ProductPreviewProductImagePreviewContainerSelected{
+    height: 100px;
+    width: 100px;
+}
+
+.ProductPreviewProductImagePreviewContainerSelected img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProductPreviewProductImagePreviewContainerSelected{
+    border: 2px solid black;
+}
+
+.ProductPreviewProductImagePreviewContainer img{
+    border: 2px solid transparent;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProductPreviewProductContent{
+
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.ProductPreviewProductContentNameNPrice{
+    width: 100%;
+}
+
+.ProductPreviewProductContentNameNPricePara{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Space Mono", monospace;
+    letter-spacing: 0px;
+}
+
+.ProductPreviewProductContentNameNPriceParaSmall{
+    
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Space Mono", monospace;
+}

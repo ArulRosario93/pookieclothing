@@ -7,13 +7,17 @@ import AddColours from "./AddColours/AddColours";
 import AddStyles from "./AddStyles/AddStyles";
 import ProductPage from "../ProductPage/ProductPage";
 import ProductPreview from "./ProductPreview/ProductPreview";
+import axios from 'axios';
 
 const CreateProduct = ({ show, onClose }) => {
 
     const [index, setIndex] = useState(0);
+    const [product, setProduct] = useState({});
 
     // Image
     const [selectedImages, setSelectedImages] = useState([]);
+    // file Reader
+    const [fileimages, setFileImages] = useState([]);
     // Name
     const [name, SetName] = useState('');
     // price
@@ -34,50 +38,96 @@ const CreateProduct = ({ show, onClose }) => {
         }
     }
 
-    const handleChangeIndex = () => {
+    const handleChangeIndex = async () => {
 
         if(index == 0){
             if(selectedImages.length > 0){
                 setIndex(index + 1);
+                setProduct((preV) => (
+                    {
+                        ...preV,
+                        images: Array.from(selectedImages),
+                    }
+                ))
                 return;
             }
         }else if(index == 1){
             if (name.trim() !== '') {
                 setIndex(index + 1);
+                setProduct((preV) => (
+                    {
+                        ...preV,
+                        name: name
+                    }
+                ))
                 return;
             }
         }else if(index == 2){
             if(price.trim().length > 0){
                 setIndex(index + 1);
+                setProduct((preV) => (
+                    {
+                        ...preV,
+                        price: price
+                    }
+                ))
                 return;
             }
         }else if(index == 3){
             if(notes.trim().length > 0){
                 setIndex(index + 1);
+                setProduct((preV) => ({
+                    ...preV, 
+                    notes: notes
+                }));
                 return;
             }
         }else if(index == 4){
             if (colours.length > 0) {
                 setIndex(index + 1);
+                setProduct((preV) => ({
+                    ...preV, 
+                    colours: colours,
+                }));
                 return;
             }
-        }else if(index == 5){
+        }else if(index == 5) {
             if (styles.length > 0) {
+                const loadedImages = await handleChangeFileImage();
+                setProduct((preV) => ({
+                    ...preV, 
+                    styles: styles,
+                    fileimages: loadedImages,
+                }));
                 setIndex(index + 1);
                 return;
             }
         }else if(index == 6){
-            // if (styles.length > 0) {
-                setIndex(index + 1);
-                return;
-            // }
-        }
+            // Send data to backend
+            console.log('send data to backend');
 
-        console.log(index);
+            handleSendData();
+        }
     }
 
+    
+    const handleChangeFileImage = async () => {
+        
+        const filePromises = selectedImages.map(file => {
+            return new Promise(resolve => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.readAsDataURL(file);
+            });
+        });
+
+        const results = await Promise.all(filePromises);
+        return results
+    };
+
+    
     const handleChangeImage = (val) => {
-        setSelectedImages(val.target.files);
+        setSelectedImages(Array.from(val.target.files));
     }
 
     const handleChangeName = (e) => {
@@ -109,6 +159,30 @@ const CreateProduct = ({ show, onClose }) => {
         setStyles(style);
     }
 
+    const handleSendData = async () => {
+       const formData = new FormData();
+       formData.append('data', JSON.stringify(product));
+        Array.from(selectedImages).forEach((file, idx) => {
+        // Append same key for multiple files, or distinct keys if you prefer
+        formData.append("images", file);
+        // Alternative: formData.append(`image_${idx}`, file);
+        });
+
+        // Debug: list entries so you know entries exist
+        for (const pair of formData.entries()) {
+            console.log("formdata entry:", pair[0], pair[1], pair[1] instanceof File ? `(File ${pair[1].name})` : "");
+        }
+
+        try {
+            const res = await axios.post("https://pookiewears-server.netlify.app/.netlify/functions/createproduct", formData);
+            console.log(res);
+            alert("Upload successful!");
+        } catch (err) {
+            console.error(err);
+            alert("Upload failed", err);
+        }
+    }
+
     const returnWidget = (index) => {
 
         switch (index) {
@@ -131,7 +205,7 @@ const CreateProduct = ({ show, onClose }) => {
                 return <AddStyles handleChangeStyles={handleChangeStyles}/>
             
             case 6:
-                return <ProductPreview />
+                return <ProductPreview product={product} />
                 
             default:
                 break;
@@ -141,11 +215,9 @@ const CreateProduct = ({ show, onClose }) => {
 
 
     return (
-        <Dialog open={show} maxWidth onClose={onClose} className="CreateProduct">
+        <Dialog open={show} fullWidth onClose={onClose} className="CreateProduct">
 
-            <DialogTitle>
-                <h2 className="CreateProductHead">Create Product</h2>
-            </DialogTitle>
+            <h2 className="CreateProductHead">Create Product</h2>
 
             <DialogContent>
 

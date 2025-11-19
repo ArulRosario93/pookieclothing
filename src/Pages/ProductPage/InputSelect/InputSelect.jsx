@@ -3,11 +3,9 @@ import React from "react";
 import './InputSelect.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const InputSelect = ({ head }) => {
+const InputSelect = ({ head, items, handleChange }) => {
 
-    const handleClick = () => {
-        console.log("Clicked");
-    }
+    handleChange(items[0]);
 
     return (
         <div className="InputSelect">
@@ -15,8 +13,16 @@ const InputSelect = ({ head }) => {
             {/* <label htmlFor={head} hidden className="InputSelectPara"></label> */}
 
 
-            <select className="InputSelectSelect" name={head} id={head}>
-                <option>{head}</option>
+            <select className="InputSelectSelect" onChange={handleChange} name={head} id={head}>
+                {
+                    items.map((item, i) => {
+                        return (
+                            <option key={i} value={item} className="InputSelectSelectOption">
+                                {item}
+                            </option>
+                        )
+                    })
+                }
             </select>
             {/* <KeyboardArrowDownIcon style={{ color: 'white' }} /> */}
 

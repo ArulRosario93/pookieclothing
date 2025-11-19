@@ -22,61 +22,15 @@ const ProductPage = () => {
             clotheName: 'Massive Black Blue',
             imageSrc: 'https://assets.bigcartel.com/product_images/393025512/546792bc-3af4-4cf3-b8c0-77468f5f0b8a.jpg',
             priceSection: '22 USD',
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/412610220/7fc0dfd8-e2a9-44bf-8bea-7f12d8e23174.jpeg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'WITCH WOMAN',
-            imageSrc: 'https://assets.bigcartel.com/product_images/409012752/e736d14b-db3d-4404-bea7-d44635299b6d.jpeg',
-            priceSection: '22 USD',
+            colours: ['red', 'green'],
+            styles: ['Oversized', 'Sweatshirt'],
         },
         {
             clotheName: 'Massive Black Blue',
             imageSrc: 'https://assets.bigcartel.com/product_images/393025512/546792bc-3af4-4cf3-b8c0-77468f5f0b8a.jpg',
             priceSection: '22 USD',
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/412610220/7fc0dfd8-e2a9-44bf-8bea-7f12d8e23174.jpeg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'WITCH WOMAN',
-            imageSrc: 'https://assets.bigcartel.com/product_images/409012752/e736d14b-db3d-4404-bea7-d44635299b6d.jpeg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/393025512/546792bc-3af4-4cf3-b8c0-77468f5f0b8a.jpg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/412610220/7fc0dfd8-e2a9-44bf-8bea-7f12d8e23174.jpeg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'WITCH WOMAN',
-            imageSrc: 'https://assets.bigcartel.com/product_images/409012752/e736d14b-db3d-4404-bea7-d44635299b6d.jpeg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/393025512/546792bc-3af4-4cf3-b8c0-77468f5f0b8a.jpg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/412610220/7fc0dfd8-e2a9-44bf-8bea-7f12d8e23174.jpeg',
-            priceSection: '22 USD',
-        },
-        {
-            clotheName: 'WITCH WOMAN',
-            imageSrc: 'https://assets.bigcartel.com/product_images/409012752/e736d14b-db3d-4404-bea7-d44635299b6d.jpeg',
-            priceSection: '22 USD',
+            colours: ['red', 'green'],
+            styles: ['Oversized', 'Sweatshirt'],
         },
     ]
 
@@ -88,6 +42,8 @@ const ProductPage = () => {
             image: 'https://images.threadsmagazine.com/app/uploads/5139/13/11124242/131-turn-of-cloth-01.jpg',
         }
     ];
+
+    const defaultInitalSizes = ['Small', 'Medium', 'Large', 'X-Large', 'XX-Large', 'XXX-Large'];
 
     const handleChangeImage = (index) => {
 
@@ -148,7 +104,7 @@ const ProductPage = () => {
 
                         </div>
 
-                                    <img src={data[selectedImage].image} alt='clothe' />
+                        <img src={data[selectedImage].image} alt='clothe' />
 
                     </div>
                     <div className='ProductPageProductImagePreview'>
@@ -157,7 +113,7 @@ const ProductPage = () => {
                             data.map((item, i) => {
                                 return (
                                     <div key={i} className={item.image == data[selectedImage].image ? 'ProductPageProductImagePreviewContainerSelected': 'ProductPageProductImagePreviewContainer'} onClick={() => handleChangeImage(i)}>
-                                        <img src={item.image} alt={item.image} />
+                                        <img src={item} alt={item} />
                                     </div>
                                 )
                             })
@@ -178,9 +134,9 @@ const ProductPage = () => {
 
                     </div>
 
-                    <InputSelect head='Size' />
-                    <InputSelect head='Colour' />
-                    <InputSelect head='Style' />
+                    <InputSelect head='Size' items={defaultInitalSizes} />
+                    <InputSelect head='Colour' items={['Colours',...items.colours]} />
+                    <InputSelect head='Style' items={['Styles' ,...items.styles]}/>
 
                     <AddToBasket /> 
 

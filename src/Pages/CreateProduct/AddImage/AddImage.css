@@ -1,6 +1,7 @@
 
 .AddImage{
-    
+    margin: auto;
+    width: max-content;
     padding: 10px;
     background-color: aquamarine;
 

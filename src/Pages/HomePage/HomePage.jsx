@@ -24,26 +24,10 @@ const HomePage = () => {
 
     useEffect(() => {
 
-        // fetch(
-        //     'http://localhost:8888/.netlify/functions/createorder',
-        //     {
-        //         method: 'POST',
-        //         body: JSON.stringify(item)
-        //     }
-        // )
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log("Whay cominggg?? ", data);
-        //     setItems(data.message);
-        // })
-        // .catch(error => {
-        //     console.error('Error fetching data ena da nadakudhu', error.message.toString());
-        // });
-
-        fetch('http://localhost:8888/.netlify/functions/getproducts')
+        fetch('https://pookiewears-server.netlify.app//.netlify/functions/getproducts')
         .then(response => response.json())
         .then(data => {
-            console.log("Whay cominggg?? ", data.message);
+            console.log('wassup ', data);
             setItems(data.message);
         })
         .catch(error => {
