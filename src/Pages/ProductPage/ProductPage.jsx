@@ -13,37 +13,26 @@ const ProductPage = () => {
 
     const nav = useLocation();
 
-    console.log(nav.state);
+    const item = nav.state.item;
 
     const [selectedImage, setSelectedImage] = useState(0);
-
-    const items = [
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/393025512/546792bc-3af4-4cf3-b8c0-77468f5f0b8a.jpg',
-            priceSection: '22 USD',
-            colours: ['red', 'green'],
-            styles: ['Oversized', 'Sweatshirt'],
-        },
-        {
-            clotheName: 'Massive Black Blue',
-            imageSrc: 'https://assets.bigcartel.com/product_images/393025512/546792bc-3af4-4cf3-b8c0-77468f5f0b8a.jpg',
-            priceSection: '22 USD',
-            colours: ['red', 'green'],
-            styles: ['Oversized', 'Sweatshirt'],
-        },
-    ]
-
-    const data = [
-        {
-            image: 'https://assets.bigcartel.com/product_images/403181877/2e0b78e0-a113-491a-b207-4f7206b1d178.jpeg',
-        },
-        {
-            image: 'https://images.threadsmagazine.com/app/uploads/5139/13/11124242/131-turn-of-cloth-01.jpg',
-        }
-    ];
+    const [size, setSize] = useState('');
+    const [colour, setColour] = useState('');
+    const [style, setStyle] = useState();
 
     const defaultInitalSizes = ['Small', 'Medium', 'Large', 'X-Large', 'XX-Large', 'XXX-Large'];
+
+    const handleSize = (value) => {
+        setSize(size);
+    }
+
+    const handleColour = (colour) => {
+        setColour(colour);
+    }
+
+    const handleStyle = (value) => {
+        setStyle(value)
+    }
 
     const handleChangeImage = (index) => {
 
@@ -53,7 +42,7 @@ const ProductPage = () => {
 
     const handleChangeImageForward = () => {
         
-        if(data.length > selectedImage + 1){
+        if(item?.images.length > selectedImage + 1){
             setSelectedImage(selectedImage + 1);
         }else{
             setSelectedImage(0);
@@ -65,8 +54,7 @@ const ProductPage = () => {
         if((selectedImage - 1) >= 0){
             setSelectedImage(selectedImage - 1);
         }else{
-            console.log(data.length - 1);
-            setSelectedImage(data.length - 1);
+            setSelectedImage(item?.images.length - 1);
         }
     }
 
@@ -77,7 +65,7 @@ const ProductPage = () => {
             {/* Page Navigation */}
             <div className='ProductPagePageNavigation'>
 
-                <p className='ProductPagePageNavigationPara'>Home \ Products \ {items[0].clotheName}</p>
+                <p className='ProductPagePageNavigationPara'>Home \ Products \ {item?.name}</p>
 
             </div>
 
@@ -104,16 +92,16 @@ const ProductPage = () => {
 
                         </div>
 
-                        <img src={data[selectedImage].image} alt='clothe' />
+                        <img src={item?.images[selectedImage]} alt='clothe' />
 
                     </div>
                     <div className='ProductPageProductImagePreview'>
 
                         {
-                            data.map((item, i) => {
+                            item?.images.map((image, i) => {
                                 return (
-                                    <div key={i} className={item.image == data[selectedImage].image ? 'ProductPageProductImagePreviewContainerSelected': 'ProductPageProductImagePreviewContainer'} onClick={() => handleChangeImage(i)}>
-                                        <img src={item} alt={item} />
+                                    <div key={i} className={image == item?.images[selectedImage] ? 'ProductPageProductImagePreviewContainerSelected': 'ProductPageProductImagePreviewContainer'} onClick={() => handleChangeImage(i)}>
+                                        <img src={image} alt={image} />
                                     </div>
                                 )
                             })
@@ -129,18 +117,18 @@ const ProductPage = () => {
 
                     <div className='ProductPageProductContentNameNPrice'>
 
-                        <p className='ProductPageProductContentNameNPricePara'>{items[0].clotheName}</p>
-                        <p className='ProductPageProductContentNameNPriceParaSmall'>{items[0].priceSection}</p>
+                        <p className='ProductPageProductContentNameNPricePara'>{item?.name}</p>
+                        <p className='ProductPageProductContentNameNPriceParaSmall'>{item?.price}</p>
 
                     </div>
 
-                    <InputSelect head='Size' items={defaultInitalSizes} />
-                    <InputSelect head='Colour' items={['Colours',...items.colours]} />
-                    <InputSelect head='Style' items={['Styles' ,...items.styles]}/>
+                    <InputSelect handleChange={handleSize} head='Size' items={defaultInitalSizes} />
+                    <InputSelect handleChange={handleColour} head='Colour' items={['Colours',...item.colours]} />
+                    <InputSelect handleChange={handleStyle} head='Style' items={['Styles' ,...item.styles]}/>
 
                     <AddToBasket /> 
 
-                    <AboutProduct />
+                    <AboutProduct notes={item?.notes} />
 
                 </div>
 
@@ -149,7 +137,7 @@ const ProductPage = () => {
 
 
             {/* You might Also Like */}
-            <SuggestedProduct items={items.slice(0, 3)} />
+            {/* <SuggestedProduct items={item.slice(0, 3)} /> */}
 
         </div>
     );

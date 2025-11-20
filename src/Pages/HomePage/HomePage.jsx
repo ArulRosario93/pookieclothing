@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import './HomePage.css';
 import GreetingText from "../../Components/GreetingText/GreetingText";
@@ -8,19 +7,6 @@ const HomePage = () => {
 
     const [items, setItems] = React.useState([]);
 
-    // const item = {
-    //     name: 'Arul Rosario SuperSized',
-    //     price: '30 usd',
-    //     images: [
-    //         'https://jednorth.com/cdn/shop/files/DSC09128_1800x1800.jpg',
-    //         'https://thelazytshirtcompany.com/cdn/shop/files/41_LeftPocket.png'
-    //     ],
-    //     notes: '',
-    //     style: [
-    //         'Oversized',
-    //         'Sweatshirt'
-    //     ],
-    // };
 
     useEffect(() => {
 

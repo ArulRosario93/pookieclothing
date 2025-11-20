@@ -2,7 +2,7 @@
 .InputSelect{
     width: 100%;
     /* padding: 15px; */
-    border: 2px solid black;
+    border: 2px solid white;
     display: flex;
     flex-direction: row;    
     justify-content: space-between;
@@ -20,11 +20,13 @@
     width: 100%;
     padding: 15px;
     color: black;
+    background-color: black;
+    color: white;
 }
 
 .InputSelectSelectOption{
-    background-color: black;
     color: white;
+    /* background-color: ; */
 }
 
 .InputSelectPara{
