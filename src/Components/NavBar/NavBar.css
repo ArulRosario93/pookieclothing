@@ -80,3 +80,36 @@
     display: flex;
     gap: 30px;
 }
+
+.NavBarSection3IconIcon{
+    font-size: 1.8rem;
+}
+@media screen and (max-width: 768px) {
+    .NavBarSection3IconIcon{
+        font-size: 10px;
+    }
+
+    .NavBar{
+        padding: 5px;
+    }
+    .NavBarSection1{
+        gap: 0px;
+    }
+    .NavBarSection1SubHead{
+        font-size: 12px;
+    }
+    .NavBarSection2Head{
+        gap: 10px;
+        font-size: 30px;
+    }
+    .NavBarSection1SubHeadShopPara, .NavBarSection1SubHeadMorePara{
+        width: 150px;
+        padding: 10px;
+        gap: 0px;
+    }
+    .NavBarSection3 > .NavBarSection3Icon{
+    
+        gap: 6px;
+
+    }
+}

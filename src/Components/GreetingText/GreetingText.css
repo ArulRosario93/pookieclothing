@@ -26,3 +26,15 @@
     letter-spacing: -1px;
     text-align: center;     
 }
+
+@media screen and (max-width: 768px) {
+    .GreetingTextHead{
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+    .GreetingTextPara{
+        letter-spacing: 0px;
+        font-size: 15px;
+
+    }
+}

@@ -68,8 +68,8 @@ const NavBar = ({ showAll }) => {
             {
                 !showAll? <div className="NavBarSection3">
                     <div className="NavBarSection3Icon">
-                        <SearchIcon style={{ fontSize: "1.8rem" }} />
-                        <ShoppingCartIcon style={{ fontSize: "1.8rem" }} />
+                        <SearchIcon className="NavBarSection3IconIcon" />
+                        <ShoppingCartIcon className="NavBarSection3IconIcon" />
                     </div>
                 </div> : null
             }

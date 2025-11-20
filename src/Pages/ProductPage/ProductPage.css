@@ -125,3 +125,23 @@
     border-radius: 5px;
     object-fit: cover;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .ProductPage{
+        margin-top: 180px;
+    }
+    .ProductPageProduct{
+        flex-direction: column;
+    }
+    .ProductPageProductImageContainer{
+        height: 60vh;   
+    }
+    .ProductPageProductContent{
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
