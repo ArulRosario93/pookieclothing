@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './AddStyles.css';
 
 const AddStyles = ({ handleChangeStyles }) => {
@@ -22,8 +22,11 @@ const AddStyles = ({ handleChangeStyles }) => {
         }
 
         handleChangeStyles(initialStyles);
-
     }
+
+    useEffect(() => {
+        handleChangeStyles(initialStyles);
+    }, [initialStyles]);
 
     return (
         <div className="AddStyles">
