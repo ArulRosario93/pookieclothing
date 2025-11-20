@@ -183,6 +183,8 @@ const CreateProduct = ({ show, onClose }) => {
             console.log(res);
             setLoading(false);
             alert("Upload successful!");
+            
+            window.location.reload();
         } catch (err) {
             console.error(err);
             setLoading(false);
