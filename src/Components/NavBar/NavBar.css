@@ -50,7 +50,6 @@
     text-decoration-thickness: 2px;
 }
 
-
 .NavBarSection1SubHead:hover{
     text-decoration:underline;
     text-decoration-thickness: 2px;
@@ -107,9 +106,9 @@
         padding: 10px;
         gap: 0px;
     }
-    .NavBarSection3 > .NavBarSection3Icon{
-    
-        gap: 6px;
 
+    .NavBarSection3 > .NavBarSection3Icon{
+        gap: 6px;
     }
+
 }

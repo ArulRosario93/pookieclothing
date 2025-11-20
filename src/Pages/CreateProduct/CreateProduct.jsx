@@ -8,11 +8,13 @@ import AddStyles from "./AddStyles/AddStyles";
 import ProductPage from "../ProductPage/ProductPage";
 import ProductPreview from "./ProductPreview/ProductPreview";
 import axios from 'axios';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const CreateProduct = ({ show, onClose }) => {
 
     const [index, setIndex] = useState(0);
     const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(false);
 
     // Image
     const [selectedImages, setSelectedImages] = useState([]);
@@ -160,6 +162,9 @@ const CreateProduct = ({ show, onClose }) => {
     }
 
     const handleSendData = async () => {
+
+        setLoading(true);
+
        const formData = new FormData();
        formData.append('data', JSON.stringify(product));
         Array.from(selectedImages).forEach((file, idx) => {
@@ -174,11 +179,13 @@ const CreateProduct = ({ show, onClose }) => {
         }
 
         try {
-            const res = await axios.post("https://pookiewears-server.netlify.app/.netlify/functions/createproduct", formData);
+            const res = await axios.post("http://localhost:8888/.netlify/functions/createproduct", formData);
             console.log(res);
+            setLoading(false);
             alert("Upload successful!");
         } catch (err) {
             console.error(err);
+            setLoading(false);
             alert("Upload failed", err);
         }
     }
@@ -232,8 +239,8 @@ const CreateProduct = ({ show, onClose }) => {
                 
                 {index > 0? <button className="CreateProductBtn" onClick={handleChangeIndexBack}>Back</button>: <div></div>}
 
-                <button className="CreateProductBtn" onClick={handleChangeIndex}>
-                    {index == 5? 'Preview': 'Next'}
+                <button className="CreateProductBtn" onClick={loading? null :handleChangeIndex}>
+                    {loading ? <CircularProgress /> :index == 5? 'Preview': 'Next'}
                 </button>
 
             </DialogActions>

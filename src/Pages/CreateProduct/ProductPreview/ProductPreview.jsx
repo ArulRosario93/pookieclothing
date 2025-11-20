@@ -15,7 +15,7 @@ const ProductPreview = ({ product }) => {
     const [colour, setColours] = useState('');
     const [size, setSize] = useState('');
     const [style, setStyle] = useState('');
-    
+
     const defaultInitalSizes = ['Small', 'Medium', 'Large', 'X-Large', 'XX-Large', 'XXX-Large'];
 
     const handleChangeImage = (index) => {
