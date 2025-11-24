@@ -78,6 +78,7 @@
     display: flex;
     flex-direction: row;
     gap: 40px;
+    flex: 1;
     justify-content: center;
     align-items: center;
 }
@@ -173,4 +174,66 @@
 
 .CartPageTotalSectionBtn button:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .CartPage{
+        width: 95%;
+    }
+    .CartPageHead{
+        margin-top: 100px;
+        font-size: 25px;
+    }
+    .CartPageProducts{
+        padding: 20px 0px 20px 0px;
+        /* background-color: aqua; */
+    }
+    .CartPageProductsLeftImg{
+        width: 60px;
+        height: 60px;
+    }
+    .CartPageProductsLeftImg img{
+        padding: 1px;
+    }
+    .CartPageProducts{
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .CartPageProductLeftContentTypes{
+        gap: 5px;
+    }
+    .CartPageProductLeftContentNamePara{
+        font-size: 14px;
+    }
+    .CartPageProductsLeftContentPara{
+        font-size: 12px;
+    }
+    .CartPageProductsRightAddAndRemove{
+        gap: 4px;
+    }
+    .CartPageProductsRightAddAndRemoveBtns{
+        gap: 30px;
+        padding: 6px 10px;
+    }
+    .CartPageProductsRightPrice{
+        font-size: 14px;
+    }
+    .CartPageTotalSectionContent{
+        width: 90%;
+        margin: auto;
+    }
+    .CartPageTotalSectionBtn{
+        margin: auto;
+        width: 90%;
+    }
+    .CartPageTotalSectionContentPara{
+        font-size: 16px;
+    }
+    .CartPageTotalSectionBtn button{
+        font-size: 14px;
+        padding: 20px;
+
+    }
 }
