@@ -27,6 +27,14 @@ const NavBar = ({ showAll }) => {
         }  
     }
 
+    const handleToHome = () => {
+        window.location = '/';
+    }
+
+    const handleToCart = () => {
+        window.location = '/cart';
+    }
+
     React.useEffect(() => {
         document.addEventListener('click', handleClickOutside);
         return () => {
@@ -60,7 +68,7 @@ const NavBar = ({ showAll }) => {
             
 
             <div className="NavBarSection2">
-                <h1 className="NavBarSection2Head">PookieClothings</h1>
+                <h1 className="NavBarSection2Head" onClick={handleToHome}>PookieClothings</h1>
             </div>
 
     
@@ -69,7 +77,7 @@ const NavBar = ({ showAll }) => {
                 !showAll? <div className="NavBarSection3">
                     <div className="NavBarSection3Icon">
                         <SearchIcon className="NavBarSection3IconIcon" />
-                        <ShoppingCartIcon className="NavBarSection3IconIcon" />
+                        <ShoppingCartIcon onClick={handleToCart} className="NavBarSection3IconIcon" />
                     </div>
                 </div> : null
             }

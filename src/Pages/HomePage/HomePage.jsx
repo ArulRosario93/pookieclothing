@@ -7,7 +7,6 @@ const HomePage = () => {
 
     const [items, setItems] = React.useState([]);
 
-
     useEffect(() => {
 
         fetch('https://pookiewears-server.netlify.app//.netlify/functions/getproducts')
